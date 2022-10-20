@@ -72,7 +72,7 @@ import { required, minLength, maxLength, numeric } from 'vuelidate/lib/validator
 export default {
   name: "create", //eslint-disable-line
   async asyncData ({ $axios, route }) {
-    const book = await $axios.$get(`http://localhost:8000/api/books/${route.params.id}`)
+    const book = await $axios.$get(`/api/books/${route.params.id}`)
       .then((res) => {
         return res.data
       })

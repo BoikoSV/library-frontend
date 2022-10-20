@@ -34,7 +34,7 @@
         <div v-if="book.image" class="d-flex gap-4 mb-5 fs-5">
           <div class="w-25 text-end">Image</div>
           <div class="fw-bolder w-25">
-            <img class="d-block w-100" :src="`http://localhost:8000/storage/${book.image}`" :alt="book.title">
+            <img class="d-block w-100" :src="`/storage/${book.image}`" :alt="book.title">
           </div>
         </div>
         <div class="d-flex gap-4 mb-5 fs-5">
@@ -77,7 +77,7 @@ export default {
       }
     },
     getBook () {
-      this.$axios.get(`http://localhost:8000/api/books/${this.$route.params.id}`)
+      this.$axios.get(`/api/books/${this.$route.params.id}`)
         .then((res) => {
           this.book = res.data.data
           this.loaded = true

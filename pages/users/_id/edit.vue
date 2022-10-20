@@ -82,7 +82,7 @@ import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 export default {
   name: "edit", //eslint-disable-line
   async asyncData ({ $axios, route }) {
-    const user = await $axios.$get(`http://localhost:8000/api/users/${route.params.id}`)
+    const user = await $axios.$get(`/api/users/${route.params.id}`)
       .then((res) => {
         return res.data
       })

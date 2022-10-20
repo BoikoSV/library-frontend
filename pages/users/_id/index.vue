@@ -51,7 +51,7 @@
 <script>
 import moment from 'moment';
 export default {
-  name: 'Show',
+  name: 'Show', //eslint-disable-line
   data () {
     return {
       user: null,
@@ -77,7 +77,7 @@ export default {
       }
     },
     getUsers () {
-      this.$axios.get(`http://localhost:8000/api/users/${this.$route.params.id}`)
+      this.$axios.get(`/api/users/${this.$route.params.id}`)
         .then((res) => {
           this.user = res.data.data
           this.loaded = true

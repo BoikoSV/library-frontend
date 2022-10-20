@@ -73,14 +73,14 @@ import moment from 'moment';
 export default {
   name: "create", //eslint-disable-line
   async asyncData ({ $axios, route }) {
-    const loan = await $axios.$get(`http://localhost:8000/api/loans/${route.params.id}`)
+    const loan = await $axios.$get(`/api/loans/${route.params.id}`)
       .then((res) => {
         return res.data
       })
-    const books = await $axios.$get('http://localhost:8000/api/books').then((res) => {
+    const books = await $axios.$get('/api/books').then((res) => {
       return res.data
     })
-    const members = await $axios.$get('http://localhost:8000/api/users').then((res) => {
+    const members = await $axios.$get('/api/users').then((res) => {
       return res.data
     })
     return { books, members, loan }

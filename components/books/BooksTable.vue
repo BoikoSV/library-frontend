@@ -29,7 +29,7 @@
       <tr v-for="book in books" :key="book.id">
         <td class="d-flex d-flex justify-content-center align-items-center">
           <div v-if="book.image" class="d-flex m-auto">
-            <img style="width: 3rem;height: 3rem;object-fit: contain;" :src="`http://localhost:8000/storage/${book.image}`" alt="" class="m-auto">
+            <img style="width: 3rem;height: 3rem;object-fit: contain;" :src="`/storage/${book.image}`" alt="" class="m-auto">
           </div>
           <div v-else class="bg-light d-flex rounded-circle" style="width: 3rem;height: 3rem;">
             <i class="bi bi-book-fill m-auto fs-4 text-muted" />

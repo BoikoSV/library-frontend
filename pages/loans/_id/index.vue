@@ -47,7 +47,7 @@
 <script>
 import moment from 'moment';
 export default {
-  name: 'Show',
+  name: 'Show', //eslint-disable-line
   data () {
     return {
       loan: null,
@@ -61,15 +61,15 @@ export default {
   },
   methods: {
     async getLoans () {
-      await this.$axios.get(`http://localhost:8000/api/loans/${this.$route.params.id}`)
+      await this.$axios.get(`/api/loans/${this.$route.params.id}`)
         .then((res) => {
           this.loan = res.data.data
         })
-      const book = this.$axios.get(`http://localhost:8000/api/books/${this.loan.book_id}`)
+      const book = this.$axios.get(`/api/books/${this.loan.book_id}`)
         .then((res) => {
           this.book = res.data.data
         })
-      const user = this.$axios.get(`http://localhost:8000/api/users/${this.loan.user_id}`)
+      const user = this.$axios.get(`/api/users/${this.loan.user_id}`)
         .then((res) => {
           this.user = res.data.data
         })

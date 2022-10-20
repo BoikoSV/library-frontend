@@ -40,19 +40,19 @@ export default {
     formData.append('title', book.title)
     formData.append('author', book.author)
     const headers = { 'Content-Type': 'multipart/form-data' }
-    this.$axios.post('http://localhost:8000/api/books', formData, { headers })
+    this.$axios.post('/api/books', formData, { headers })
       .then((res) => {
         this.$router.push('/books')
       })
   },
   updateBook({}, book) { //eslint-disable-line
-    this.$axios.patch(`http://localhost:8000/api/books/${book.id}`, book)
+    this.$axios.patch(`/api/books/${book.id}`, book)
       .then((res) => {
         this.$router.push('/books')
       })
   },
   deleteBook({ commit }, bookId) { //eslint-disable-line
     commit('setLoad', true)
-    return this.$axios.delete(`http://localhost:8000/api/books/${bookId}`)
+    return this.$axios.delete(`/api/books/${bookId}`)
   }
 }

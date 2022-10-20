@@ -26,19 +26,19 @@ export default {
     })
   },
   addUser({}, user) { //eslint-disable-line
-    this.$axios.post('http://localhost:8000/api/users', user)
+    this.$axios.post('/api/users', user)
       .then((res) => {
         this.$router.push('/users')
       })
   },
   updateUser({}, user) { //eslint-disable-line
-    this.$axios.patch(`http://localhost:8000/api/users/${user.id}`, user)
+    this.$axios.patch(`/api/users/${user.id}`, user)
       .then((res) => {
         this.$router.push('/users')
       })
   },
   deleteUser({ commit }, userId) { //eslint-disable-line
     commit('setLoad', true)
-    return this.$axios.delete(`http://localhost:8000/api/users/${userId}`)
+    return this.$axios.delete(`/api/users/${userId}`)
   }
 }

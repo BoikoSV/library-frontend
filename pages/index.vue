@@ -1,5 +1,7 @@
 <template>
-  <Tutorial />
+  <div>
+    Index page
+  </div>
 </template>
 
 <script>

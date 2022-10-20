@@ -28,19 +28,19 @@ export default {
     })
   },
   addLoan({}, loan) { //eslint-disable-line
-    this.$axios.post('http://localhost:8000/api/loans', loan)
+    this.$axios.post('/api/loans', loan)
       .then((res) => {
         this.$router.push('/loans')
       })
   },
   updateLoan({}, loan) { //eslint-disable-line
-    this.$axios.patch(`http://localhost:8000/api/loans/${loan.id}`, loan)
+    this.$axios.patch(`/api/loans/${loan.id}`, loan)
       .then((res) => {
         this.$router.push('/loans')
       })
   },
   deleteLoan({ commit }, loanId) { //eslint-disable-line
     commit('setLoad', true)
-    return this.$axios.delete(`http://localhost:8000/api/loans/${loanId}`)
+    return this.$axios.delete(`/api/loans/${loanId}`)
   }
 }

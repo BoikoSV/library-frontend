@@ -4,7 +4,7 @@ export default () => ({
   paginator: {
     current_page: null
   },
-  path: 'http://localhost:8000/api/books',
+  path: '/api/books',
   filter: {},
   currentBook: {
     id: null,
