@@ -9,7 +9,7 @@
       </div>
       <thead>
       <tr class="text-nowrap text-center text-muted">
-        <th>Cover</th>
+<!--        <th>Cover</th>-->
         <th>ISBN</th>
         <th>
           Title
@@ -27,14 +27,14 @@
       </thead>
       <tbody>
       <tr v-for="book in books" :key="book.id">
-        <td class="d-flex d-flex justify-content-center align-items-center">
-          <div v-if="book.image" class="d-flex m-auto">
-            <img style="width: 3rem;height: 3rem;object-fit: contain;" :src="`/storage/${book.image}`" alt="" class="m-auto">
-          </div>
-          <div v-else class="bg-light d-flex rounded-circle" style="width: 3rem;height: 3rem;">
-            <i class="bi bi-book-fill m-auto fs-4 text-muted" />
-          </div>
-        </td>
+<!--        <td class="d-flex d-flex justify-content-center align-items-center">-->
+<!--          <div v-if="book.image" class="d-flex m-auto">-->
+<!--            <img style="width: 3rem;height: 3rem;object-fit: contain;" :src="`/storage/${book.image}`" alt="" class="m-auto">-->
+<!--          </div>-->
+<!--          <div v-else class="bg-light d-flex rounded-circle" style="width: 3rem;height: 3rem;">-->
+<!--            <i class="bi bi-book-fill m-auto fs-4 text-muted" />-->
+<!--          </div>-->
+<!--        </td>-->
         <td>{{ book.isbn }}</td>
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>

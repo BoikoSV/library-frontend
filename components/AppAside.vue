@@ -1,11 +1,11 @@
 <template>
   <aside id="toggleMenu" class="aside col-2 min-vh-100 collapse-horizontal collapse bg-dark text-white">
 <!--  User image  -->
-    <div class="mt-3 d-flex justify-content-center">
-      <div class="aside__user-image bg-light text-muted d-flex rounded-circle">
-        <span class="m-auto d-flex text-nowrap">No image</span>
-      </div>
-    </div>
+<!--    <div class="mt-3 d-flex justify-content-center">-->
+<!--      <div class="aside__user-image bg-light text-muted d-flex rounded-circle">-->
+<!--        <span class="m-auto d-flex text-nowrap">No image</span>-->
+<!--      </div>-->
+<!--    </div>-->
 
 <!--  Menu  -->
     <ul class="nav nav-pills flex-column text-nowrap mt-4">
@@ -25,8 +25,8 @@ export default {
   data () {
     return {
       links: [
-        { text: 'Audit Logs', path: '/audit', icon: 'bi bi-clock-history' },
-        { text: 'Settings', path: '/settings', icon: 'bi bi-sliders' },
+        // { text: 'Audit Logs', path: '/audit', icon: 'bi bi-clock-history' },
+        // { text: 'Settings', path: '/settings', icon: 'bi bi-sliders' },
         { text: 'Users', path: '/users', icon: 'bi bi-people' },
         { text: 'Loans', path: '/loans', icon: 'bi bi-journal-text' },
         { text: 'Books', path: '/books', icon: 'bi bi-book' }

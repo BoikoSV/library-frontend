@@ -5,18 +5,18 @@
         <i class="bi bi-plus-lg" />
         New
       </nuxt-link>
-      <button class="btn btn-primary">
-        <i class="bi bi-upload" />
-        Import
-      </button>
-      <button class="btn btn-outline-secondary">
-        <i class="bi bi-clock-history" />
-        Audit Logs
-      </button>
-      <button class="btn btn-outline-secondary">
-        <i class="bi bi-file-earmark-excel" />
-        Export to Excel
-      </button>
+<!--      <button class="btn btn-primary">-->
+<!--        <i class="bi bi-upload" />-->
+<!--        Import-->
+<!--      </button>-->
+<!--      <button class="btn btn-outline-secondary">-->
+<!--        <i class="bi bi-clock-history" />-->
+<!--        Audit Logs-->
+<!--      </button>-->
+<!--      <button class="btn btn-outline-secondary">-->
+<!--        <i class="bi bi-file-earmark-excel" />-->
+<!--        Export to Excel-->
+<!--      </button>-->
     </div>
 
     <!--  Forms  -->
@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     changePage (e) {
-      console.log(e)
       this.$store.commit('users/setPage', e)
       this.$store.dispatch('users/fetchUsers')
     },
