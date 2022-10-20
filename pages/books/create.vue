@@ -45,10 +45,10 @@
                 <label for="image" class="form-label">Image</label>
                 <input
                   id="image"
-                  @change="uploadFile"
-                  type="file"
                   ref="image"
+                  type="file"
                   class="form-control"
+                  @change="uploadFile"
                 >
               </div>
             </div>
@@ -75,9 +75,11 @@
 </template>
 
 <script>
+import AppPage from "@/components/AppPage";
 import { required, minLength, maxLength, numeric } from 'vuelidate/lib/validators'
 export default {
   name: "create", //eslint-disable-line
+  components: { AppPage },
   data () {
     return {
       book: {
