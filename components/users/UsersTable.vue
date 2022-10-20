@@ -12,11 +12,11 @@
 <!--        <th>Avatar</th>-->
         <th>
           Email
-          <i class="bi bi-caret-down-fill" />
+<!--          <i class="bi bi-caret-down-fill" />-->
         </th>
         <th>
           Name
-          <i class="bi bi-caret-down-fill" />
+<!--          <i class="bi bi-caret-down-fill" />-->
         </th>
         <th>
           Roles
@@ -26,7 +26,7 @@
         </th>
         <th>
           Created at
-          <i class="bi bi-caret-down-fill" />
+<!--          <i class="bi bi-caret-down-fill" />-->
         </th>
         <th>--</th>
       </tr>

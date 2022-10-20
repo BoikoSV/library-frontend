@@ -13,11 +13,11 @@
         <th>Member</th>
         <th>
           Date
-          <i class="bi bi-caret-down-fill" />
+<!--          <i class="bi bi-caret-down-fill" />-->
         </th>
         <th>
           Due date
-          <i class="bi bi-caret-down-fill" />
+<!--          <i class="bi bi-caret-down-fill" />-->
         </th>
         <th>--</th>
       </tr>

@@ -13,11 +13,11 @@
         <th>ISBN</th>
         <th>
           Title
-          <i class="bi bi-caret-down-fill" />
+<!--          <i class="bi bi-caret-down-fill" />-->
         </th>
         <th>
           Author
-          <i class="bi bi-caret-down-fill" />
+<!--          <i class="bi bi-caret-down-fill" />-->
         </th>
         <th>
           Status
