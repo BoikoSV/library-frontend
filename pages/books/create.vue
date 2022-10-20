@@ -75,8 +75,8 @@
 </template>
 
 <script>
-import AppPage from "@/components/AppPage";
 import { required, minLength, maxLength, numeric } from 'vuelidate/lib/validators'
+import AppPage from '@/components/AppPage';
 export default {
   name: "create", //eslint-disable-line
   components: { AppPage },
