@@ -6,6 +6,9 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  middleware({ redirect }) {
+    return redirect('/books')
+  }
 }
 </script>

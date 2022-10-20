@@ -1,7 +1,9 @@
 export default () => ({
   loans: [],
   load: true,
-  paginator: null,
+  paginator: {
+    current_page: null
+  },
   path: '/api/loans',
   filter: {}
 })
