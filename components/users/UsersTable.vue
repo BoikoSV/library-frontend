@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="users.length === 0" class="fs-3 text-center py-4">There are no records!</div>
+    <div v-if="users.length === 0 && !load" class="fs-3 text-center py-4">There are no records!</div>
     <table v-else class="table align-middle table-bordered table-hover position-relative">
     <div v-if="load" class="position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center" style="min-height: 100px;background-color: rgba(0, 0, 0, 0.3)">
         <div class="spinner-border text-light" style="height: 5rem; width: 5rem;" role="status">
