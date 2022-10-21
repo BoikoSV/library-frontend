@@ -1,5 +1,5 @@
 <template>
-  <aside id="toggleMenu" class="aside col-2 min-vh-100 collapse-horizontal collapse bg-dark text-white">
+  <aside id="toggleMenu" class="aside col-2 min-vh-100 collapse-horizontal bg-dark text-white">
 <!--  User image  -->
 <!--    <div class="mt-3 d-flex justify-content-center">-->
 <!--      <div class="aside__user-image bg-light text-muted d-flex rounded-circle">-->
@@ -46,7 +46,7 @@ export default {
 .nav-item{
   transition: background-color 0.2s
 }
-.aside .nav-item .active{
+.aside .nav-item .nav-link{
   border-radius: 0;
 }
 .nav-item:hover{
