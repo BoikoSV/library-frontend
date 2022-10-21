@@ -2,9 +2,18 @@
   <form class="card border mb-4" @submit.prevent>
     <div class="card-body">
       <div class="row mb-3">
-        <div class="col">
+        <div class="col position-relative">
           <label for="isbn" class="form-label">ISBN</label>
-          <input id="isbn" v-model.trim="filter.isbn" type="text" class="form-control">
+          <input
+            id="isbn"
+            v-model.trim="filter.isbn"
+            :class="{ 'is-invalid': $v.filter.isbn.$error }"
+            type="number"
+            class="form-control"
+            @blur="$v.filter.isbn.$touch"
+          >
+          <span class="position-absolute end-0" style="padding-right: 12px;">{{ filter.isbn.length }}/13</span>
+          <div v-if="$v.filter.isbn.$error" class="invalid-feedback">{{ msgIsbn }}</div>
         </div>
         <div class="col">
           <label for="title" class="form-label">Title</label>
@@ -44,6 +53,7 @@
 </template>
 
 <script>
+import { minLength, maxLength } from 'vuelidate/lib/validators'
 export default {
   name: "BooksFilter", //eslint-disable-line
   data () {
@@ -56,15 +66,36 @@ export default {
       }
     }
   },
+  validations: {
+    filter: {
+      isbn: { minLength: minLength(13), maxLength: maxLength(13) }
+    }
+  },
+  computed: {
+    msgIsbn () {
+      let message = '';
+      if (!this.$v.filter.isbn.minLength) {
+        message = 'The field must have min 13 symbols'
+      }
+      if (!this.$v.filter.isbn.maxLength) {
+        message = 'The field must be max 13 symbols'
+      }
+      return message;
+    }
+  },
   methods: {
     filtered () {
-      this.$emit('filter', { ...this.filter })
+      this.$v.$touch();
+      if (!this.$v.$error) {
+        this.$emit('filter', { ...this.filter })
+      }
     },
     reset () {
       this.filter.isbn = ''
       this.filter.title = ''
       this.filter.author = ''
       this.filter.status = ''
+      this.$v.$reset();
       this.$emit('reset')
     }
   }

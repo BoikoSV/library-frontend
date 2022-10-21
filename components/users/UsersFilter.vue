@@ -14,7 +14,15 @@
       <div class="row mb-3">
         <div class="col">
           <label for="email" class="form-label">Email</label>
-          <input id="email" v-model.trim="filter.email" type="text" class="form-control">
+          <input
+            id="email"
+            v-model.trim="filter.email"
+            :class="{ 'is-invalid': $v.filter.email.$error }"
+            type="text"
+            class="form-control"
+            @blur="$v.filter.email.$touch"
+          >
+          <div v-if="$v.filter.email.$error" class="invalid-feedback">{{ msgEmail }}</div>
         </div>
         <div class="col">
           <label for="name" class="form-label">Name</label>
@@ -58,6 +66,7 @@
 </template>
 
 <script>
+import { email } from 'vuelidate/lib/validators'
 export default {
   name: "UsersFilter", //eslint-disable-line
   data () {
@@ -72,9 +81,26 @@ export default {
       }
     }
   },
+  validations: {
+    filter: {
+      email: { email }
+    }
+  },
+  computed: {
+    msgEmail () {
+      let message = '';
+      if (!this.$v.filter.email.email) {
+        message = 'The input must be valid email'
+      }
+      return message;
+    }
+  },
   methods: {
     filtered () {
-      this.$emit('filter', { ...this.filter })
+      this.$v.$touch();
+      if (!this.$v.$error) {
+        this.$emit('filter', { ...this.filter })
+      }
     },
     reset () {
       this.filter.email = ''
@@ -83,6 +109,7 @@ export default {
       this.filter.role = ''
       this.filter.createdfrom = ''
       this.filter.createdto = ''
+      this.$v.$reset();
       this.$emit('reset')
     }
   }
