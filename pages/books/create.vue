@@ -5,16 +5,17 @@
         <form class="card border mb-4" @submit.prevent>
           <div class="card-body">
             <div class="row mb-3">
-              <div class="mb-4">
+              <div class="mb-4 position-relative">
                 <label for="isbn" class="form-label">ISBN</label>
                 <input
                   id="isbn"
                   v-model="book.isbn"
                   :class="{ 'is-invalid': $v.book.isbn.$error, 'is-valid': !$v.book.isbn.$invalid }"
-                  type="text"
+                  type="number"
                   class="form-control"
                   @blur="$v.book.isbn.$touch"
                 >
+                <span class="position-absolute end-0" style="padding-right: 12px;">{{ book.isbn.length }}/13</span>
                 <div v-if="$v.book.isbn.$error" class="invalid-feedback">{{ msgIsbn }}</div>
               </div>
               <div class="mb-4">
@@ -160,4 +161,15 @@ export default {
 </script>
 
 <style>
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 </style>
