@@ -141,7 +141,15 @@ export default {
     updateBook () {
       this.$v.$touch();
       if (!this.$v.$error) {
-        this.$store.dispatch('books/updateBook', this.book)
+        const { id, title, isbn, author, status } = this.book
+        const book = {
+          id,
+          title,
+          isbn,
+          author,
+          status
+        }
+        this.$store.dispatch('books/updateBook', book)
       }
     }
   }

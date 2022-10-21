@@ -149,7 +149,15 @@ export default {
     updateUser () {
       this.$v.$touch();
       if (!this.$v.$error) {
-        this.$store.dispatch('users/updateUser', this.user)
+        const { email, name, role, status, id } = this.user
+        const user = {
+          id,
+          email,
+          name,
+          role,
+          status
+        }
+        this.$store.dispatch('users/updateUser', user)
       }
     }
   }
