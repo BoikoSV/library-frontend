@@ -4,21 +4,21 @@
       <div class="row mb-3">
         <div class="col">
           <label for="created-from" class="form-label">Created at - from</label>
-          <input id="created-from" v-model="filter.createdfrom" type="date" class="form-control">
+          <input id="created-from" v-model.trim="filter.createdfrom" type="date" class="form-control">
         </div>
         <div class="col">
           <label for="created-to" class="form-label">Created at - to</label>
-          <input id="created-to" v-model="filter.createdto" type="date" class="form-control">
+          <input id="created-to" v-model.trim="filter.createdto" type="date" class="form-control">
         </div>
       </div>
       <div class="row mb-3">
         <div class="col">
           <label for="email" class="form-label">Email</label>
-          <input id="email" v-model="filter.email" type="text" class="form-control">
+          <input id="email" v-model.trim="filter.email" type="text" class="form-control">
         </div>
         <div class="col">
           <label for="name" class="form-label">Name</label>
-          <input id="name" v-model="filter.name" type="text" class="form-control">
+          <input id="name" v-model.trim="filter.name" type="text" class="form-control">
         </div>
       </div>
       <div class="row mb-3">

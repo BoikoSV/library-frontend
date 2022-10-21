@@ -9,9 +9,9 @@
                 <label for="email" class="form-label">Email</label>
                 <input
                   id="email"
-                  v-model="user.email"
+                  v-model.trim="user.email"
                   :class="{ 'is-invalid': $v.user.email.$error, 'is-valid': !$v.user.email.$invalid }"
-                  type="email"
+                  type="text"
                   class="form-control"
                   @blur="$v.user.email.$touch"
                 >
@@ -21,7 +21,7 @@
                 <label for="name" class="form-label">Name</label>
                 <input
                   id="name"
-                  v-model="user.name"
+                  v-model.trim="user.name"
                   :class="{ 'is-invalid': $v.user.name.$error, 'is-valid': !$v.user.name.$invalid }"
                   type="text"
                   class="form-control"

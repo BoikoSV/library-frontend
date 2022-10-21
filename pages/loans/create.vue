@@ -40,7 +40,7 @@
                   <label for="created-from" class="form-label">Date to</label>
                   <input
                     id="created-from"
-                    v-model="date"
+                    v-model.trim="date"
                     :class="{ 'is-invalid': $v.date.$error, 'is-valid': !$v.date.$invalid }"
                     type="date"
                     class="form-control"

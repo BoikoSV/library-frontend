@@ -9,7 +9,7 @@
                 <label for="isbn" class="form-label">ISBN</label>
                 <input
                   id="isbn"
-                  v-model="book.isbn"
+                  v-model.trim="book.isbn"
                   disabled
                   :class="{ 'is-invalid': $v.book.isbn.$error, 'is-valid': !$v.book.isbn.$invalid }"
                   type="text"
@@ -22,7 +22,7 @@
                 <label for="title" class="form-label">Title</label>
                 <input
                   id="title"
-                  v-model="book.title"
+                  v-model.trim="book.title"
                   :class="{ 'is-invalid': $v.book.title.$error, 'is-valid': !$v.book.title.$invalid }"
                   type="text"
                   class="form-control"
@@ -34,7 +34,7 @@
                 <label for="author" class="form-label">Author</label>
                 <input
                   id="author"
-                  v-model="book.author"
+                  v-model.trim="book.author"
                   :class="{ 'is-invalid': $v.book.author.$error, 'is-valid': !$v.book.author.$invalid }"
                   type="text"
                   class="form-control"

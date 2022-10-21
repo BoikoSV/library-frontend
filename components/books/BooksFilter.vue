@@ -4,17 +4,17 @@
       <div class="row mb-3">
         <div class="col">
           <label for="isbn" class="form-label">ISBN</label>
-          <input id="isbn" v-model="filter.isbn" type="text" class="form-control">
+          <input id="isbn" v-model.trim="filter.isbn" type="text" class="form-control">
         </div>
         <div class="col">
           <label for="title" class="form-label">Title</label>
-          <input id="title" v-model="filter.title" type="text" class="form-control">
+          <input id="title" v-model.trim="filter.title" type="text" class="form-control">
         </div>
       </div>
       <div class="row mb-3">
         <div class="col">
           <label for="author" class="form-label">Author</label>
-          <input id="author" v-model="filter.author" type="text" class="form-control">
+          <input id="author" v-model.trim="filter.author" type="text" class="form-control">
         </div>
         <div class="col">
           <label for="status" class="form-label">Status</label>
