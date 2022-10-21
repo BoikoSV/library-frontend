@@ -6,7 +6,9 @@
 <!--        <span class="m-auto d-flex text-nowrap">No image</span>-->
 <!--      </div>-->
 <!--    </div>-->
-
+    <div class="mt-3 d-flex justify-content-center border-bottom pb-4">
+      <span class="fs-4 fw-bold">Dashboard</span>
+    </div>
 <!--  Menu  -->
     <ul class="nav nav-pills flex-column text-nowrap mt-4">
       <li v-for="link in links" :key="link.path" class="nav-item">
